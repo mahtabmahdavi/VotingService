@@ -1,13 +1,18 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using VotingClient.Data;
+using VotingService.Protos;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
+
+//Add gRPC service
+builder.Services.AddGrpcClient<VoteService.VoteServiceClient>(options =>
+{
+    options.Address = new Uri("https://localhost:5001");
+});
 
 var app = builder.Build();
 
