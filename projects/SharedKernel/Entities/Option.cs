@@ -11,7 +11,7 @@ public class Option
     public Guid Id { get; set; }
     public string Text { get; set; } = string.Empty;
 
-    public Guid QuestuionId { get; set; }
+    public Guid QuestionId { get; set; }
     public Question Question { get; set; }
 
     public ICollection<Vote> Votes { get; set; } = new List<Vote>();
