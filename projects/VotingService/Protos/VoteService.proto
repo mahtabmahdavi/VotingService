@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+option csharp_namespace = "VotingService.Protos";
+
+package vote;
+
+service VoteService {
+  rpc GetPolls (Empty) returns (PollListResponse);
+  rpc GetPollById (GetPollByIdRequest) returns (PollResponse);
+  rpc SubmitVote (VoteRequest) returns (VoteResponse);
+}
+
+message Empty {}
+
+message GetPollByIdRequest {
+  string poll_id = 1;
+}
+
+message PollListResponse {
+  repeated Poll polls = 1;
+}
+
+message PollResponse {
+  Poll poll = 1;
+}
+
+message Poll {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  repeated Question questions = 4;
+}
+
+message Question {
+  string id = 1;
+  string text = 2;
+  repeated Option options = 3;
+}
+
+message Option {
+  string id = 1;
+  string text = 2;
+  int32 vote_count = 3;
+}
+
+message VoteRequest {
+  string option_id = 1;
+  string voter_id = 2;
+}
+
+message VoteResponse {
+  bool success = 1;
+  string message = 2;
+}
