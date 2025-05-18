@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SharedKernel.Entities;
 
-namespace VotingService.Persistence.Context;
+namespace VotingService.Infrastructure.Data;
 
 public class VotingDbContext : DbContext
 {

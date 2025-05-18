@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using SharedKernel.Entities;
 
-namespace VotingService.Persistence.Configurations;
+namespace VotingService.Infrastructure.Data.Configurations;
 
 public class OptionConfiguration : IEntityTypeConfiguration<Option>
 {

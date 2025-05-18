@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SharedKernel.Entities;
 
-namespace VotingService.Persistence.Configurations;
+namespace VotingService.Infrastructure.Data.Configurations;
 
 public class PollConfiguration : IEntityTypeConfiguration<Poll>
 {
