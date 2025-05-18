@@ -19,7 +19,7 @@ public class QuestionConfiguration : IEntityTypeConfiguration<Question>
 
         builder.HasMany(q => q.Options)
             .WithOne(o => o.Question)
-            .HasForeignKey(o => o.QuestuionId)
+            .HasForeignKey(o => o.QuestionId)
             .OnDelete(DeleteBehavior.Cascade);
     }
 }

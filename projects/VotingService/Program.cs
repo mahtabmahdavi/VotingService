@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using VotingService.GRPC.Services;
 using VotingService.Persistence.Context;
-using VotingService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

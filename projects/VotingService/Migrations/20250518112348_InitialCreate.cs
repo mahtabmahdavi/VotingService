@@ -86,7 +86,7 @@ namespace VotingService.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Options_QuestuionId",
                 table: "Options",
-                column: "QuestuionId");
+                column: "QuestionId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Questions_PollId",

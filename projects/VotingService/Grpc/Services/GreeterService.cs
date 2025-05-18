@@ -1,7 +1,6 @@
 using Grpc.Core;
-using VotingService;
 
-namespace VotingService.Services;
+namespace VotingService.Grpc.Services;
 
 public class GreeterService : Greeter.GreeterBase
 {

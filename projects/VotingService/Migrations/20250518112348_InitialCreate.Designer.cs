@@ -31,7 +31,7 @@ namespace VotingService.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("QuestuionId")
+                    b.Property<Guid>("QuestionId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Text")
@@ -41,7 +41,7 @@ namespace VotingService.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("QuestuionId");
+                    b.HasIndex("QuestionId");
 
                     b.ToTable("Options", (string)null);
                 });
@@ -119,7 +119,7 @@ namespace VotingService.Migrations
                 {
                     b.HasOne("SharedKernel.Entities.Question", "Question")
                         .WithMany("Options")
-                        .HasForeignKey("QuestuionId")
+                        .HasForeignKey("QuestionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
