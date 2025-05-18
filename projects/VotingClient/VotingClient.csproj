@@ -10,4 +10,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+	<Protobuf Include="../VotingService/Protos/vote.proto" GrpcServices="Client" />
+  </ItemGroup>
+
 </Project>
