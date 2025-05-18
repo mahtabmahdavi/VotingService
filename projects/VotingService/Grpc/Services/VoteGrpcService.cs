@@ -36,5 +36,17 @@ public class VoteGrpcService : VoteService.VoteServiceBase
 
         return new PollResponse { Poll = poll.ToProto() };
     }
-}
 
+    public override async Task<VoteResponse> SubmitVote(VoteRequest request, ServerCallContext context)
+    {
+        try
+        {
+            await _repository.SubmitVoteAsync(Guid.Parse(request.OptionId), request.VoterId);
+            return new VoteResponse { Success = true, Message = "Vote submitted." };
+        }
+        catch (Exception ex)
+        {
+            return new VoteResponse { Success = false, Message = ex.Message };
+        }
+    }
+}
