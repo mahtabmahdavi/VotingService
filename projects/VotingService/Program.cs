@@ -1,9 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using VotingService.Persistence.Context;
 using VotingService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddGrpc();
+
+builder.Services.AddDbContext<VotingDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
