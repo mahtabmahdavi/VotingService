@@ -4,11 +4,13 @@ using VotingService.Protos;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// --------------------------------------------------
+// Services
+// --------------------------------------------------
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
-//Add gRPC service
+// gRPC Client Configuration
 builder.Services.AddGrpcClient<VoteService.VoteServiceClient>(options =>
 {
     options.Address = new Uri("https://localhost:5163");
@@ -16,20 +18,22 @@ builder.Services.AddGrpcClient<VoteService.VoteServiceClient>(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// --------------------------------------------------
+// Middleware
+// --------------------------------------------------
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
-
 app.UseStaticFiles();
-
 app.UseRouting();
 
+// --------------------------------------------------
+// Endpoints
+// --------------------------------------------------
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
