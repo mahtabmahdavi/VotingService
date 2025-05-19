@@ -11,7 +11,7 @@ builder.Services.AddServerSideBlazor();
 //Add gRPC service
 builder.Services.AddGrpcClient<VoteService.VoteServiceClient>(options =>
 {
-    options.Address = new Uri("https://localhost:5001");
+    options.Address = new Uri("https://localhost:5163");
 });
 
 var app = builder.Build();

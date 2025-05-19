@@ -16,9 +16,9 @@ public class PollRepository : IPollRepository
     public async Task<List<Poll>> GetAllPollsAsync()
     {
         return await _context.Polls
-            .Include(p => p.Questions)
-                .ThenInclude(q => q.Options)
-                    .ThenInclude(o => o.Votes)
+            //.Include(p => p.Questions)
+            //    .ThenInclude(q => q.Options)
+            //        .ThenInclude(o => o.Votes)
             .ToListAsync();
     }
 
