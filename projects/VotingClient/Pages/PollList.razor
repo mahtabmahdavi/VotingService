@@ -1,8 +1,5 @@
 ﻿@page "/poll-list"
 
-@inject VoteService.VoteServiceClient VoteClient
-@inject NavigationManager Navigation
-
 <div class="poll-list-container">
     @if (Polls == null)
     {
@@ -22,29 +19,3 @@
         }
     }
 </div>
-
-@code {
-    private List<Poll> Polls = new();
-
-    protected override async Task OnInitializedAsync()
-    {
-        try
-        {
-            var response = await VoteClient.GetPollsAsync(new Empty());
-            Console.WriteLine($"Poll count from server: {response.Polls.Count}");
-            Polls = response.Polls.ToList();
-
-        }
-        catch (RpcException ex)
-        {
-            Console.Error.WriteLine($"gRPC error: {ex.Status.Detail}");
-            // مدیریت خطا مثل نمایش پیام یا لاگ
-        }
-    }
-
-
-    private void NavigateToPoll(string pollId)
-    {
-        Navigation.NavigateTo($"/poll/{pollId}");
-    }
-}
