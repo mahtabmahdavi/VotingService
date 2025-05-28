@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "projects", "projects", "{2BD2DAD5-8500-4BEB-A350-40A7B27C30B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VotingService", "projects\VotingService\VotingService.csproj", "{FC9FF39F-CC23-42E4-AB38-96365E3396AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VotingClient", "projects\VotingClient\VotingClient.csproj", "{1650EE6B-5109-4480-9B01-7803C2A106E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel", "projects\SharedKernel\SharedKernel.csproj", "{19D0F337-CD44-4A2F-80A3-06E0FF0FE102}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC9FF39F-CC23-42E4-AB38-96365E3396AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC9FF39F-CC23-42E4-AB38-96365E3396AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC9FF39F-CC23-42E4-AB38-96365E3396AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC9FF39F-CC23-42E4-AB38-96365E3396AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1650EE6B-5109-4480-9B01-7803C2A106E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1650EE6B-5109-4480-9B01-7803C2A106E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1650EE6B-5109-4480-9B01-7803C2A106E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1650EE6B-5109-4480-9B01-7803C2A106E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19D0F337-CD44-4A2F-80A3-06E0FF0FE102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D0F337-CD44-4A2F-80A3-06E0FF0FE102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19D0F337-CD44-4A2F-80A3-06E0FF0FE102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19D0F337-CD44-4A2F-80A3-06E0FF0FE102}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC9FF39F-CC23-42E4-AB38-96365E3396AA} = {2BD2DAD5-8500-4BEB-A350-40A7B27C30B4}
+		{1650EE6B-5109-4480-9B01-7803C2A106E7} = {2BD2DAD5-8500-4BEB-A350-40A7B27C30B4}
+		{19D0F337-CD44-4A2F-80A3-06E0FF0FE102} = {2BD2DAD5-8500-4BEB-A350-40A7B27C30B4}
+	EndGlobalSection
+EndGlobal

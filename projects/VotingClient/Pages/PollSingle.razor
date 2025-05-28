@@ -1,0 +1,46 @@
+﻿@page "/poll/{PollId}"
+
+<main>
+    @if (IsLoading)
+    {
+        <p>Loading poll...</p>
+    }
+    else if (CurrentPoll is not null)
+    {
+        <div class="poll-card-container">
+            <input type="text" class="poll-title-input" value="@CurrentPoll.Title" readonly />
+
+            <div class="poll-options-container">
+                @foreach (var question in CurrentPoll.Questions)
+                {
+                    <fieldset class="poll-question">
+                        <legend class="poll-options-legend">@question.Text</legend>
+
+                        @foreach (var option in question.Options)
+                        {
+                            <div>
+                                <input type="radio"
+                                       name="question_@question.Id"
+                                       id="@option.Id"
+                                       value="@option.Id"
+                                       @onchange="() => OnOptionSelected(question.Id, option.Id)"
+                                       checked="@((SelectedOptionIds.TryGetValue(question.Id, out var selectedId) && selectedId == option.Id))" />
+                                <label for="@option.Id">@option.Text</label>
+                            </div>
+                        }
+                    </fieldset>
+                }
+            </div>
+
+            <button class="poll-vote-btn"
+                    @onclick="SubmitVote"
+                    disabled="@(!AllQuestionsAnswered)">
+                VOTE
+            </button>
+        </div>
+    }
+    else
+    {
+        <p>Poll not found.</p>
+    }
+</main>

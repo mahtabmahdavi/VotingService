@@ -1,0 +1,35 @@
+# Auto-detect text files and normalize line endings
+* text=auto
+
+# Force LF for scripts and styles
+*.css text eol=lf
+*.scss text eol=lf
+*.js  text eol=lf
+*.ts  text eol=lf
+*.json text eol=lf
+
+# C# and config files as text, with automatic line endings
+*.cs   text
+*.csproj text
+*.sln  text
+*.config text
+*.xml  text
+
+# Blazor / Razor files
+*.razor text
+*.razor.cs text
+
+# Mark binary files explicitly (prevent line ending normalization)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.dll binary
+*.exe binary
+*.pdf binary
+
+# Playwright test reports and logs - no line ending changes
+playwright-report/** -text
+test-results/** -text
+*.log -text
